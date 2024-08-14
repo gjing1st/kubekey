@@ -22,6 +22,7 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	"time"
 
 	versionK8S "github.com/kubesphere/kubekey/v3/cmd/kk/pkg/version/kubernetes"
 
@@ -83,7 +84,7 @@ func (i *InstallationConfirm) Execute(runtime connector.Runtime) error {
 		results = append(results, result)
 	}
 	table.OutputA(results)
-	reader := bufio.NewReader(os.Stdin)
+	//reader := bufio.NewReader(os.Stdin)
 
 	if !i.KubeConf.Arg.InstallPackages {
 		for _, host := range results {
@@ -155,12 +156,15 @@ func (i *InstallationConfirm) Execute(runtime connector.Runtime) error {
 
 	confirmOK := false
 	for !confirmOK {
+		//不需要用户输入，一键安装
+		input := "y"
+		time.Sleep(time.Second * 3)
 		fmt.Printf("Continue this installation? [yes/no]: ")
-		input, err := reader.ReadString('\n')
-		if err != nil {
-			logger.Log.Fatal(err)
-		}
-		input = strings.TrimSpace(strings.ToLower(input))
+		//input, err := reader.ReadString('\n')
+		//if err != nil {
+		//	logger.Log.Fatal(err)
+		//}
+		//input = strings.TrimSpace(strings.ToLower(input))
 
 		switch strings.ToLower(input) {
 		case "yes", "y":
