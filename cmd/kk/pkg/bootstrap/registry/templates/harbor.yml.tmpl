@@ -34,12 +34,12 @@ https:
 # The initial password of Harbor admin
 # It only works in first time to install harbor
 # Remember Change the admin password from UI after launching Harbor.
-harbor_admin_password: Harbor12345
+harbor_admin_password: Zf1@harbor
 
 # Harbor DB configuration
 database:
   # The password for the root user of Harbor DB. Change this before any production use.
-  password: root123
+  password: Zf1@harbordb
   # The maximum number of connections in the idle connection pool. If it <=0, no idle connections are retained.
   max_idle_conns: 100
   # The maximum number of open connections to the database. If it <= 0, then there is no limit on the number of open connections.
@@ -53,7 +53,7 @@ database:
   conn_max_idle_time: 0
 
 # The default data volume
-data_volume: /mnt/registry
+data_volume: /home/mnt/registry
 
 # Harbor Storage settings by default is using /data dir on local filesystem
 # Uncomment storage_service setting If you want to using external storage
