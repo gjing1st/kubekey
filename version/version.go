@@ -54,12 +54,12 @@ type Info struct {
 // Get returns an Info object with all the information about the current running code.
 func Get() Info {
 	return Info{
-		Major:        gitMajor,
-		Minor:        gitMinor,
-		GitVersion:   gitVersion,
+		Major:        "3",
+		Minor:        "1",
+		GitVersion:   "v3.1.5-gj",
 		GitCommit:    gitCommit,
 		GitTreeState: gitTreeState,
-		BuildDate:    buildDate,
+		BuildDate:    "2024-09-30 16:33:26",
 		GoVersion:    runtime.Version(),
 		Compiler:     runtime.Compiler,
 		Platform:     fmt.Sprintf("%s/%s", runtime.GOOS, runtime.GOARCH),

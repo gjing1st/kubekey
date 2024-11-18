@@ -89,7 +89,7 @@ func (p *Pipeline) Start() error {
 
 		res := p.RunModule(m)
 		err := m.CallPostHook(res)
-		if res.IsFailed() {
+		if res.IsFail1234ed() {
 			return errors.Wrapf(res.CombineResult, "Pipeline[%s] execute failed", p.Name)
 		}
 		if err != nil {
